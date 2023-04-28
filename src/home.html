@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная страница"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="intro">
+				<div class="intro__container">
+					<div class="intro__content content-intro">
+						<h3 class="content-intro__subtitle">Адвокатское бюро города Москвы</h3>
+						<h1 class="content-intro__title">Туник и партнеры</h1>
+						<div class="content-intro__text">Наша команда работает на российском рынке более 20 лет.
+							Мы специализируемся на разрешении комплексных коммерческих споров, уголовно-правовой защите
+							бизнеса, корпоративных конфликтах</div>
+						<button type="submit" class="button">Оставить заявку</button>
+					</div>
+					<div class="intro__blocks blocks-intro">
+						<div class="blocks-intro__item _item1"></div>
+						<div class="blocks-intro__item _item2">
+							<img src="@img/intro/image1.jpg" alt="image">
+						</div>
+						<div class="blocks-intro__item _item3"></div>
+						<div class="blocks-intro__item _item4"></div>
+						<div class="blocks-intro__item _item5"></div>
+						<div class="blocks-intro__item _item6">
+							<img src="@img/intro/image2.jpg" alt="image">
+						</div>
+						<div class="blocks-intro__item _item7"></div>
+						<div class="blocks-intro__item _item8">
+							<img src="@img/intro/image3.jpg" alt="image">
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="line"></div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
