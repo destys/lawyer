@@ -1,0 +1,129 @@
+.bureau {
+    // .bureau__container
+    &__container {
+    }
+    // .bureau__top
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(100);
+        margin-bottom: rem(69);
+    }
+    // .bureau__adv
+    &__adv {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(93);
+    }
+}
+.top-bureau {
+    // .top-bureau__image
+    &__image {
+        flex: 0 0 rem(443);
+        padding-right: rem(66);
+        padding-bottom: rem(49);
+
+        position: relative;
+
+        .elem {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            width: rem(187);
+            height: rem(189);
+
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 200%;
+                height: 200%;
+
+                border-radius: 50%;
+
+                background-color: $golden;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    // .top-bureau__content
+    &__content {
+    }
+}
+.content-top-bureau {
+    // .content-top-bureau__title
+    &__title {
+        margin-bottom: rem(52);
+        line-height: math.div(73, 60);
+        text-transform: uppercase;
+        color: $dark;
+    }
+    // .content-top-bureau__text
+    &__text {
+        margin-bottom: rem(52);
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(32);
+            }
+        }
+    }
+    // .content-top-bureau__subtitle
+    &__subtitle {
+        line-height: math.div(51, 34);
+        font-size: rem(34);
+        text-transform: uppercase;
+        color: $dark;
+    }
+}
+.adv-bureau {
+    // .adv-bureau__item
+    &__item {
+        flex: 0 0 rem(450);
+    }
+    // .adv-bureau__icon
+    &__icon {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: rem(40);
+        padding-right: rem(14);
+        padding-bottom: rem(16);
+
+        width: rem(113);
+        height: rem(107);
+
+        position: relative;
+
+        &::after {
+            content: "";
+            width: rem(60);
+            height: rem(60);
+            background-color: rgba($golden, 0.1);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+    }
+    // .adv-bureau__title
+    &__title {
+        margin-bottom: rem(18);
+        line-height: math.div(32, 27);
+        font-size: 27px;
+
+        letter-spacing: 0.02em;
+        color: $dark2;
+    }
+    // .adv-bureau__text
+    &__text {
+        letter-spacing: 0.02em;
+    }
+}
