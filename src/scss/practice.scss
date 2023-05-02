@@ -1,0 +1,87 @@
+.practice {
+    &._block {
+        margin-bottom: rem(100);
+        padding: rem(75) 0 rem(146);
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 49%;
+            background: url("@img/elements/practice-lines.svg") 0 0 no-repeat;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            width: rem(321);
+            height: rem(305);
+            background: url("@img/elements/practice-at.png") center no-repeat;
+            background-size: contain;
+
+            position: absolute;
+            right: rem(-123);
+            top: 50%;
+            z-index: 1;
+        }
+    }
+    // .practice__container
+    &__container {
+    }
+    // .practice__section-title
+    &__section-title {
+        margin-bottom: rem(91);
+        text-align: center;
+        color: #fffaf3;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
+    // .practice__list
+    &__list {
+        @include gridCards("fit", rem(700), 1fr);
+        position: relative;
+        z-index: 2;
+    }
+    // .practice__item
+    &__item {
+        border-radius: rem(30);
+        overflow: hidden;
+
+        &:first-child {
+            .item-practice__title {
+                background-color: $golden;
+            }
+        }
+    }
+}
+.item-practice {
+    // .item-practice__image
+    &__image {
+        img {
+            width: 100%;
+            height: rem(231);
+        }
+    }
+    // .item-practice__title
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(25) 0;
+        min-height: rem(118);
+        background-color: #fff;
+
+        span {
+            max-width: rem(580);
+            line-height: math.div(34, 28);
+            font-size: rem(28);
+            text-align: center;
+            color: $dark2;
+        }
+    }
+}

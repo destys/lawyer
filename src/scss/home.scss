@@ -1,6 +1,8 @@
 //====================================================================================================
 .intro {
     position: relative;
+    padding-bottom: rem(100);
+    margin-bottom: rem(100);
     // .intro__container
     &__container {
         display: flex;

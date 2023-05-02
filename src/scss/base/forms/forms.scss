@@ -2,6 +2,7 @@
 // Снипет (HTML):
 .form {
 	&__row {
+		display: flex;
 	}
 	&__input {
 	}
@@ -18,7 +19,7 @@
 
 // <INPUTS>
 // Снипет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Снипет (HTML): chk
