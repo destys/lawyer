@@ -17,19 +17,19 @@ EffectFade, Lazy, Manipulation
 
 // Стили Swiper
 // Базовые стили
-import "../../scss/base/swiper.scss";
+//import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
-// import 'swiper/css';
+import 'swiper/css';
 
 // Инициализация слайдеров
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.__slider')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.team__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.__slider', { // Указываем скласс нужного слайдера
+		new Swiper('.team__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая 
 			modules: [Navigation],
@@ -64,7 +64,7 @@ function initSliders() {
 			*/
 
 			// Скроллбар
-			
+
 			/* scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,

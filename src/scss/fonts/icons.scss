@@ -12,12 +12,15 @@
 	display: flex;
 	align-items: center;
 	gap: rem(10);
-	
+
 	&:before {
 		@extend %ic;
 	}
 }
 
+._icon-location:before {
+	content: "\e905";
+}
 ._icon-vk:before {
 	content: "\e900";
 }

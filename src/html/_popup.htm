@@ -1,11 +1,31 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
+<div id="callback" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
 			<div class="popup__text">
+				<form action="#" class="popup__form form" data-ajax data-dev>
+					<h3 class="form__title">Обратная связь</h3>
+					<div class="form__row">
+						<input autocomplete="off" type="text" name="cb-name"
+							data-error="Поле обязательно для заполнения" placeholder="Ваше имя" class="input"
+							data-required>
+					</div>
+					<div class="form__row">
+						<input autocomplete="off" type="tel" name="cb-tel" data-error="Поле обязательно для заполнения"
+							placeholder="Телефон" class="input" data-required>
+					</div>
+					<button type="submit" class="button">Отправить</button>
+					<div class="form__privacy">
+						<div class="checkbox">
+							<input id="c_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1"
+								name="form[]">
+							<label for="c_1" class="checkbox__label"><span class="checkbox__text">Нажимая кнопку
+									“отправить”, вы соглашаетесь на передачу и обработку персональных данных в
+									соответствии с Политикой конфиденциальности</span></label>
+						</div>
+					</div>
+				</form>
 			</div>
+			<button data-close type="button" class="popup__close"><span>Закрыть</span></button>
 		</div>
 	</div>
 </div>
- -->

@@ -9,6 +9,8 @@
 	&__button {
 	}
 	&__error {
+		font-size: rem(14);
+		color: red;
 	}
 }
 //</FORM>
@@ -23,7 +25,7 @@
 
 // <CHECK>
 // Снипет (HTML): chk
-// @import "checkbox";
+@import "checkbox";
 
 // <RADIO>
 // Снипет (HTML): opt
