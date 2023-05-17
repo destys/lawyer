@@ -42,6 +42,10 @@
         position: relative;
         z-index: 2;
     }
+    // .practice__title
+    &__title {
+        margin-bottom: rem(60);
+    }
     // .practice__list
     &__list {
         @include gridCards("fit", rem(700), 1fr);
@@ -83,6 +87,130 @@
             font-size: rem(28);
             text-align: center;
             color: $dark2;
+        }
+    }
+}
+//========================================================================================================================================================
+.practice {
+    // .practice__block
+    &__block {
+        color: $dark2;
+        position: relative;
+        overflow: hidden;
+
+        &:nth-of-type(2) {
+            position: relative;
+            &::before {
+                content: "";
+                background: url("@img/elements/practice-line-1.svg") center no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: rem(-166);
+                left: 0;
+                z-index: 1;
+                width: rem(763);
+                height: rem(1933);
+            }
+
+            &::after {
+                content: "";
+                background: url("@img/elements/practice-page-branch.png") center no-repeat;
+                width: rem(222);
+                height: rem(174);
+                background-size: contain;
+                position: absolute;
+                bottom: rem(220);
+                @include adaptiveValue("left", 153, 15, 1920, 1600, 1);
+                z-index: 1;
+            }
+        }
+
+        &:last-child {
+            &::before {
+                content: "";
+                background: url("@img/elements/practice-line-bottom.svg") center no-repeat;
+
+                width: 100%;
+                height: rem(462);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+        }
+
+        // ._dark
+        &._dark {
+            padding: rem(150) 0;
+            border-radius: 80px;
+            background-color: #080d1b;
+            color: #fff;
+
+            &:last-child {
+                border-radius: 80px 80px 0 0;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(100);
+        }
+    }
+}
+.block-practice {
+    // .block-practice__container
+    &__container {
+        display: flex;
+        @include adaptiveValue("gap", 169, 30);
+    }
+    &__left,
+    &__right {
+        position: relative;
+        z-index: 2;
+        h3 {
+            margin-bottom: rem(30);
+            line-height: math.div(51, 34);
+            font-size: rem(34);
+            text-transform: uppercase;
+        }
+
+        ul {
+            margin-bottom: rem(30);
+
+            li {
+                display: flex;
+                gap: rem(14);
+
+                letter-spacing: 0.02em;
+                line-height: math.div(32, 20);
+
+                &:not(:last-child) {
+                    margin-bottom: rem(20);
+                }
+
+                &::before {
+                    content: "-";
+                }
+            }
+        }
+
+        img {
+            border-radius: 30px;
+        }
+    }
+    // .block-practice__left
+    &__left {
+        flex: 1 1 auto;
+
+        ._dark & {
+            flex: 0 0 rem(649);
+        }
+    }
+    // .block-practice__right
+    &__right {
+        flex: 0 0 rem(649);
+
+        ._dark & {
+            flex: 1 1 auto;
         }
     }
 }

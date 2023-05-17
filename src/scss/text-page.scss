@@ -1,0 +1,32 @@
+.text-page {
+    font-weight: 400;
+
+    h1 {
+        margin-bottom: rem(40);
+    }
+
+    h2,
+    h3 {
+        margin: rem(40) 0 rem(15);
+
+        line-height: math.div(33, 28);
+        font-size: rem(28);
+        color: $dark;
+    }
+
+    p {
+        margin-bottom: rem(33);
+    }
+
+    ul,
+    ol {
+        margin-bottom: rem(33);
+    }
+    li {
+        list-style: inside auto;
+
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+}

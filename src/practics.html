@@ -5,17 +5,103 @@
 })
 
 <body>
-	<div class="wrapper">
-		@@include('html/_header.htm',{})
-		<main class="page">
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
             @@include('html/_crumbs.htm',{
             "title":"Практики"
             })
-		</main>
-		@@include('html/_footer.htm',{})
-	</div>
-	@@include('html/_popup.htm',{})
-	@@include('html/_js.htm',{})
+            <div class="practice">
+                <h1 class="practice__title practice__container">Практики</h1>
+                <section class="practice__block block-practice">
+                    <div class="block-practice__container">
+                        <div class="block-practice__left">
+                            <h3>Защита и представительство в уголовном процессе</h3>
+                            <ul>
+                                <li>консультирование и оценка перспектив по уголовному делу;</li>
+                                <li>выстраивание тактики и стратегии защиты по уголовным делам;</li>
+                                <li>защита и представительство на стадии доследственной проверки, предварительного
+                                    следствия и суда;</li>
+                                <li>защита по уголовным делам, рассматриваемым судом с участием присяжных
+                                    заседателей.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="block-practice__right">
+                            <img data-src="@img/practice/block1.jpg" alt="block1">
+                        </div>
+                    </div>
+                </section>
+                <section class="practice__block block-practice _dark">
+                    <div class="block-practice__container">
+                        <div class="block-practice__left">
+                            <img data-src="@img/practice/block2.jpg" alt="block2">
+                        </div>
+                        <div class="block-practice__right">
+                            <h3>Представительство в гражданских
+                                и арбитражных тяжбах</h3>
+                            <ul>
+                                <li>консультирование;</li>
+                                <li>наследство;</li>
+                                <li>бракоразводы;</li>
+                                <li>трудовые споры;</li>
+                                <li>обжалование решений органов государственной власти;</li>
+                                <li>защита чести, достоинства и деловой репутации;</li>
+                                <li>признание недействительными решений органов управления общества;</li>
+                                <li>банкротство;</li>
+                                <li>признание права собственности;</li>
+                                <li>признание сделок недействительными и применением последствий недействительности
+                                    сделок;</li>
+                                <li>взыскание неосновательного обогащения и убытков.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="practice__block block-practice">
+                    <div class="block-practice__container">
+                        <div class="block-practice__left">
+                            <h3>Правовая защита бизнеса</h3>
+                            <ul>
+                                <li>корпоративное консультирование;</li>
+                                <li>консультирование организаций по оценке правовых рисков;</li>
+                                <li>подготовка локальных и прочих правовых актов организации;</li>
+                                <li>правовое сопровождение организаций при проверках контролирующих органов;</li>
+                                <li>защита организаций от незаконных действий правоохранительных органов;</li>
+                                <li>адвокатское расследование.</li>
+                            </ul>
+                        </div>
+                        <div class="block-practice__right">
+                            <img data-src="@img/practice/block3.jpg" alt="block3">
+                        </div>
+                    </div>
+                </section>
+                <section class="practice__block block-practice _dark">
+                    <div class="block-practice__container">
+                        <div class="block-practice__left">
+                            <img data-src="@img/practice/block4.jpg" alt="block2">
+                        </div>
+                        <div class="block-practice__right">
+                            <h3>Финансирование судебных процессов и урегулирование конфликтов</h3>
+                            <ul>
+                                <li>консультирование и оценка перспектив по судебному процессу;</li>
+                                <li>розыск активов должника;</li>
+                                <li>проверка платежеспособности должника;</li>
+                                <li>разработка плана инвестирования в судебный процесс;</li>
+                                <li>проведение due diligence;</li>
+                                <li>разработка плана для проведения переговоров;</li>
+                                <li>правовое сопровождение на переговорах;</li>
+                                <li>примирение конфликтующих сторон;</li>
+                                <li>подготовка соглашений по урегулированию конфликтов и судебных споров.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
 </body>
 
 </html>

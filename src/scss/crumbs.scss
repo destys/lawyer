@@ -10,6 +10,10 @@
         font-size: rem(16);
         color: $dark2;
 
+        .contacts & {
+            padding-left: 0;
+        }
+
         a {
             &::after{
                 content:'/';

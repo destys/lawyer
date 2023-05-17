@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Команда"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            @@include('html/_crumbs.htm',{
+            "title":"Команда"
+            })
+            <section class="team">
+                <h1 class="team__title team__container">Команда</h1>
+
+                <div class="team__item item-team">
+                    <div class="item-team__container">
+                        <div class="item-team__left">
+                            <div class="item-team__name">Туник Сергей Владимирович</div>
+                            <div class="item-team__position">управляющий партнер, адвокат</div>
+                            <div class="item-team__description">
+                                <p>Осуществляет руководство деятельностью адвокатского бюро.
+                                    Общий стаж юридической работы — с 2004 года. Член Адвокатской палаты города Москвы.
+                                </p>
+                                <p> Имеет высшее юридическое и высшее экономическое образование.
+                                    Специализируется на уголовно-правовой защите и представительстве по гражданским
+                                    делам.
+                                </p>
+                            </div>
+                            <div class="item-team__footer footer-item-team">
+                                <div class="footer-item-team__contacts">
+                                    <a href="tel:+7(903)160-67-67"
+                                        class="footer-item-team__item _icon-phone">+7(903)160-67-67</a>
+                                    <a href="mailto:info@tunikpartners.ru" class="footer-item-team__item _icon-mail">
+                                        info@tunikpartners.ru </a>
+                                    <div class="footer-item-team__social">
+                                        <a href="#" class="_icon-wa">wa</a>
+                                        <a href="#" class="_icon-fb">fb</a>
+                                        <a href="#" class="_icon-vk">vk</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="footer-item-team__button button"
+                                    data-popup="#callback">связаться</button>
+                            </div>
+                        </div>
+                        <div class="item-team__right">
+                            <img data-src="@img/team/person1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item item-team">
+                    <div class="item-team__container">
+                        <div class="item-team__left">
+                            <div class="item-team__name">Алиев Тимур Загидович</div>
+                            <div class="item-team__position">старший партнер, адвокат, к.ю.н.</div>
+                            <div class="item-team__description">
+                                <p>Общий стаж юридической работы — с 2003 года. Член Адвокатской палаты города Москвы.
+                                </p>
+                                <p>Имеет высшее юридическое образование, кандидат юридических наук. Специализируется на
+                                    представительстве по арбитражным делам и корпоративным спорам.</p>
+                            </div>
+                            <div class="item-team__footer footer-item-team">
+                                <div class="footer-item-team__contacts">
+                                    <a href="tel:+7(926)430-00-44"
+                                        class="footer-item-team__item _icon-phone">+7(926)430-00-44</a>
+                                    <a href="mailto:aliev@tunikpartners.ru"
+                                        class="footer-item-team__item _icon-mail">aliev@tunikpartners.ru</a>
+                                    <div class="footer-item-team__social">
+                                        <a href="#" class="_icon-wa">wa</a>
+                                        <a href="#" class="_icon-fb">fb</a>
+                                        <a href="#" class="_icon-vk">vk</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="footer-item-team__button button"
+                                    data-popup="#callback">связаться</button>
+                            </div>
+                        </div>
+                        <div class="item-team__right">
+                            <img data-src="@img/team/person2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item item-team">
+                    <div class="item-team__container">
+                        <div class="item-team__left">
+                            <div class="item-team__name">Горохов Сергей Николаевич</div>
+                            <div class="item-team__position">советник, к.т.н.</div>
+                            <div class="item-team__description">
+                                <p>Имеет высшее техническое и высшее военное образование, кандидат технических наук.
+                                    Специализируется на финансировании судебных процессов путем инвестирования.</p>
+                                <p>Является специалистом в области медиации. Обладает значительным опытом в проведении
+                                    переговоров по урегулированию коммерческих и корпоративных конфликтов.</p>
+                            </div>
+                            <div class="item-team__footer footer-item-team">
+                                <div class="footer-item-team__contacts">
+                                    <a href="tel:+7(903)960-69-21"
+                                        class="footer-item-team__item _icon-phone">+7(903)960-69-21</a>
+                                    <a href="mailto:gorokhov@tunikpartners.ru"
+                                        class="footer-item-team__item _icon-mail">gorokhov@tunikpartners.ru</a>
+                                    <div class="footer-item-team__social">
+                                        <a href="#" class="_icon-wa">wa</a>
+                                        <a href="#" class="_icon-fb">fb</a>
+                                        <a href="#" class="_icon-vk">vk</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="footer-item-team__button button"
+                                    data-popup="#callback">связаться</button>
+                            </div>
+                        </div>
+                        <div class="item-team__right">
+                            <img data-src="@img/team/person3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
