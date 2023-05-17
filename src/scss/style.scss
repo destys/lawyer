@@ -22,7 +22,7 @@ $fontSize: rem(20); // где 14(px) - размер шрифта по умолч
 // Основные цвета
 $mainColor: #525254; // Цвет шрифта по умолчанию
 $dark: #1a1f45;
-$dark2: #0D152A;
+$dark2: #0d152a;
 $blue: #0f337a;
 $golden: #d6b380;
 
@@ -55,7 +55,12 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
-	padding-top: rem(193);
+	padding-top: rem(156);
+	position: relative;
+
+	&.home {
+		padding-top: rem(193);
+	}
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -71,9 +76,29 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
+		position: relative;
+
+		&::after {
+			content: "";
+			background: url("@img/elements/bureau-page-branch.png") center right no-repeat;
+			background-size: contain;
+			width: rem(204);
+			height: rem(175);
+
+			position: absolute;
+			top: rem(115);
+			right: rem(0);
+		}
+
+		.home & {
+			&::after {
+				content: none;
+			}
+		}
 	}
 	// Фикс для слайдеров
 	> * {
@@ -138,6 +163,7 @@ body {
 @import "header";
 @import "footer";
 @import "callback";
+@import "crumbs";
 
 // Подключение стилей отдельных страниц
 @import "home";
