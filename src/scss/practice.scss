@@ -1,9 +1,14 @@
 .practice {
-    border-radius: 80px;
+    @include adaptiveValue("border-radius", 80, 30);
+
     &._block {
-        margin-bottom: rem(100);
-        padding: rem(75) 0 rem(146);
+        @include adaptiveValue("margin-bottom", 100, 40);
+        padding: rem(20) 0 rem(30);
         position: relative;
+
+        @media (min-width: $tablet) {
+            padding: rem(75) 0 rem(146);
+        }
 
         &::before {
             content: "";
@@ -17,17 +22,25 @@
             z-index: 1;
         }
 
-        &::after {
-            content: "";
-            width: rem(321);
-            height: rem(305);
-            background: url("@img/elements/practice-at.png") center no-repeat;
-            background-size: contain;
+        @media (max-width: $mobile) {
+            &::before {
+                top: rem(-140);
+            }
+        }
 
-            position: absolute;
-            right: rem(-123);
-            top: 50%;
-            z-index: 1;
+        @media (min-width: $tablet) {
+            &::after {
+                content: "";
+                width: rem(321);
+                height: rem(305);
+                background: url("@img/elements/practice-at.png") center no-repeat;
+                background-size: contain;
+
+                position: absolute;
+                right: rem(-123);
+                top: 50%;
+                z-index: 1;
+            }
         }
     }
     // .practice__container
@@ -35,7 +48,7 @@
     }
     // .practice__section-title
     &__section-title {
-        margin-bottom: rem(91);
+        @include adaptiveValue("margin-bottom", 91, 18);
         text-align: center;
         color: #fffaf3;
         text-transform: uppercase;
@@ -44,13 +57,21 @@
     }
     // .practice__title
     &__title {
-        margin-bottom: rem(60);
+        @include adaptiveValue("margin-bottom", 60, 18);
     }
     // .practice__list
     &__list {
-        @include gridCards("fit", rem(700), 1fr);
+        @include gridCards("fit", rem(300), 1fr);
         position: relative;
         z-index: 2;
+
+        @media (min-width: $mobileSmall) {
+            @include gridCards("fit", rem(450), 1fr);
+        }
+
+        @media (min-width: $pc) {
+            @include gridCards("fit", rem(700), 1fr);
+        }
     }
     // .practice__item
     &__item {
@@ -69,7 +90,7 @@
     &__image {
         img {
             width: 100%;
-            height: rem(231);
+            @include adaptiveValue("height", 231, 126, 767, 320, 1);
         }
     }
     // .item-practice__title
@@ -77,14 +98,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: rem(25) 0;
+        padding: rem(25) rem(22);
         min-height: rem(118);
         background-color: #fff;
 
         span {
             max-width: rem(580);
             line-height: math.div(34, 28);
-            font-size: rem(28);
+            @include adaptiveValue("font-size", 28, 16);
             text-align: center;
             color: $dark2;
         }
@@ -112,47 +133,57 @@
                 height: rem(1933);
             }
 
-            &::after {
-                content: "";
-                background: url("@img/elements/practice-page-branch.png") center no-repeat;
-                width: rem(222);
-                height: rem(174);
-                background-size: contain;
-                position: absolute;
-                bottom: rem(220);
-                @include adaptiveValue("left", 153, 15, 1920, 1600, 1);
-                z-index: 1;
+            @media (min-width: $tablet) {
+                &::after {
+                    content: "";
+                    background: url("@img/elements/practice-page-branch.png") center no-repeat;
+                    width: rem(222);
+                    height: rem(174);
+                    background-size: contain;
+                    position: absolute;
+                    bottom: rem(220);
+                    @include adaptiveValue("left", 153, 15, 1920, 1600, 1);
+                    z-index: 1;
+                }
             }
         }
 
-        &:last-child {
-            &::before {
-                content: "";
-                background: url("@img/elements/practice-line-bottom.svg") center no-repeat;
+        @media (min-width: $tablet) {
+            &:last-child {
+                &::before {
+                    content: "";
+                    background: url("@img/elements/practice-line-bottom.svg") center no-repeat;
 
-                width: 100%;
-                height: rem(462);
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
+                    width: 100%;
+                    height: rem(462);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
             }
         }
 
         // ._dark
         &._dark {
-            padding: rem(150) 0;
-            border-radius: 80px;
+            padding: rem(30) 0;
+            @include adaptiveValue("border-radius", 80, 30);
             background-color: #080d1b;
             color: #fff;
 
             &:last-child {
-                border-radius: 80px 80px 0 0;
+                @include adaptiveValue("border-radius", 80, 40);
+                border-bottom-right-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+
+            @media (min-width: $tablet) {
+                padding: rem(150) 0;
             }
         }
 
         &:not(:last-child) {
-            margin-bottom: rem(100);
+            @include adaptiveValue("margin-bottom", 100, 40);
         }
     }
 }
@@ -160,21 +191,33 @@
     // .block-practice__container
     &__container {
         display: flex;
-        @include adaptiveValue("gap", 169, 30);
+        flex-direction: column;
+        gap: rem(16);
+
+        ._dark & {
+            flex-direction: column-reverse;
+        }
+
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            @include adaptiveValue("gap", 169, 30, 1920, 991, 1);
+        }
     }
     &__left,
     &__right {
         position: relative;
         z-index: 2;
         h3 {
-            margin-bottom: rem(30);
+            @include adaptiveValue("margin-bottom", 30, 16);
             line-height: math.div(51, 34);
-            font-size: rem(34);
+            @include adaptiveValue("font-size", 34, 16);
             text-transform: uppercase;
         }
 
         ul {
-            margin-bottom: rem(30);
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 30, 16);
+            }
 
             li {
                 display: flex;
@@ -182,35 +225,43 @@
 
                 letter-spacing: 0.02em;
                 line-height: math.div(32, 20);
+                @include adaptiveValue("font-size", 20, 14);
 
                 &:not(:last-child) {
-                    margin-bottom: rem(20);
+                    margin-bottom: rem(18);
                 }
 
                 &::before {
                     content: "-";
                 }
+
+                @media (max-width: $tablet) {
+                    line-height: math.div(16, 14);
+                }
             }
         }
 
         img {
+            width: 100%;
             border-radius: 30px;
         }
     }
     // .block-practice__left
     &__left {
-        flex: 1 1 auto;
-
-        ._dark & {
-            flex: 0 0 rem(649);
+        @media (min-width: $tablet) {
+            flex: 1 1 auto;
+            ._dark & {
+                flex: 0 0 rem(649);
+            }
         }
     }
     // .block-practice__right
     &__right {
-        flex: 0 0 rem(649);
-
-        ._dark & {
-            flex: 1 1 auto;
+        @media (min-width: $tablet) {
+            ._dark & {
+                flex: 1 1 auto;
+            }
+            flex: 0 0 rem(649);
         }
     }
 }

@@ -1,5 +1,5 @@
 .bureau {
-    margin-bottom: rem(98);
+    @include adaptiveValue("margin-bottom", 98, 40);
     position: relative;
     // .bureau__container
     &__container {
@@ -8,14 +8,13 @@
     &__top {
         display: flex;
         justify-content: space-between;
-        gap: rem(100);
-        margin-bottom: rem(69);
+        @include adaptiveValue("gap", 100, 15);
+        @include adaptiveValue("margin-bottom", 69, 16);
     }
     // .bureau__adv
     &__adv {
-        display: flex;
-        justify-content: space-between;
-        gap: rem(93);
+        @include gridCards("fit", rem(250), 1fr);
+        @include adaptiveValue("gap", 93, 30);
     }
 }
 .top-bureau {
@@ -24,6 +23,7 @@
         flex: 0 0 rem(443);
         padding-right: rem(66);
         padding-bottom: rem(49);
+        height: fit-content;
 
         position: relative;
 
@@ -53,7 +53,32 @@
 
         img {
             width: 100%;
-            height: 100%;
+            @include adaptiveValue("height", 463, 209, 991, 320, 1);
+
+            @include adaptiveValue("border-radius", 150, 59);
+            border-top-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        @media (max-width: $tablet) {
+            display: none;
+        }
+
+        @media (max-width: $mobileSmall) {
+            display: block;
+            margin-bottom: rem(51);
+            padding: 0;
+
+            img {
+                width: 100%;
+            }
+
+            .elem {
+                bottom: rem(-21);
+
+                width: rem(83);
+                height: rem(84);
+            }
         }
     }
     // .top-bureau__content
@@ -63,24 +88,24 @@
 .content-top-bureau {
     // .content-top-bureau__title
     &__title {
-        margin-bottom: rem(52);
+        @include adaptiveValue("margin-bottom", 52, 16);
         line-height: math.div(73, 60);
         text-transform: uppercase;
         color: $dark;
     }
     // .content-top-bureau__text
     &__text {
-        margin-bottom: rem(52);
+        @include adaptiveValue("margin-bottom", 52, 16);
         p {
             &:not(:last-child) {
-                margin-bottom: rem(32);
+                @include adaptiveValue("margin-bottom", 32, 21);
             }
         }
     }
     // .content-top-bureau__subtitle
     &__subtitle {
         line-height: math.div(51, 34);
-        font-size: rem(34);
+        @include adaptiveValue("font-size", 34, 16);
         text-transform: uppercase;
         color: $dark;
     }
@@ -114,12 +139,16 @@
             left: 0;
             border-radius: 10px;
         }
+
+        @media (max-width: $mobile) {
+            margin: 0 auto rem(20);
+        }
     }
     // .adv-bureau__title
     &__title {
         margin-bottom: rem(18);
         line-height: math.div(32, 27);
-        font-size: 27px;
+        @include adaptiveValue("font-size", 27, 18);
 
         letter-spacing: 0.02em;
         color: $dark2;

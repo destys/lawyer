@@ -1,8 +1,10 @@
 .text-page {
     font-weight: 400;
+    @include adaptiveValue("font-size", 20, 12);
 
     h1 {
-        margin-bottom: rem(40);
+        @include adaptiveValue("margin-bottom", 40, 11);
+        @include adaptiveValue("font-size", 60, 28);
     }
 
     h2,
@@ -10,7 +12,7 @@
         margin: rem(40) 0 rem(15);
 
         line-height: math.div(33, 28);
-        font-size: rem(28);
+        @include adaptiveValue("font-size", 28, 14);
         color: $dark;
     }
 

@@ -1,0 +1,48 @@
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 rem(15);
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    transition: opacity 0.2s ease-in-out;
+
+    padding-bottom: rem(90);
+
+    .menu-open & {
+        opacity: 1;
+        z-index: 10000;
+    }
+
+    .menu {
+        &__list {
+            flex-direction: column;
+        }
+        &__item {
+            text-align: center;
+        }
+        &__link {
+            font-weight: 600;
+            font-size: rem(18);
+            color: $dark;
+        }
+    }
+
+    // .burger__social
+    &__social {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            font-size: rem(18);
+        }
+    }
+}

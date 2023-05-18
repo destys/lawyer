@@ -55,12 +55,7 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
-	padding-top: rem(156);
-	position: relative;
-
-	&.home {
-		padding-top: rem(193);
-	}
+	padding-top: rem(82);
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -68,6 +63,26 @@ body {
 	}
 	// Сайт загружен
 	.loaded & {
+	}
+
+	&.home {
+		padding-top: rem(82);
+	}
+
+	@media (min-width: $mobileSmall) {
+		padding-top: rem(110);
+
+		&.home {
+			padding-top: rem(110);
+		}
+	}
+
+	@media (min-width: $tablet) {
+		padding-top: rem(156);
+
+		&.home {
+			padding-top: rem(193);
+		}
 	}
 }
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -86,11 +101,11 @@ body {
 			content: "";
 			background: url("@img/elements/bureau-page-branch.png") center right no-repeat;
 			background-size: contain;
-			width: rem(204);
-			height: rem(175);
+			@include adaptiveValue("width", 204, 80);
+			@include adaptiveValue("height", 175, 100);
 
 			position: absolute;
-			top: rem(115);
+			@include adaptiveValue("top", 115, 30);
 			right: rem(0);
 		}
 
@@ -164,6 +179,7 @@ body {
 @import "footer";
 @import "callback";
 @import "crumbs";
+@import "burger";
 
 // Подключение стилей отдельных страниц
 @import "home";

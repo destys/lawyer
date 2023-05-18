@@ -1,16 +1,16 @@
 .callback {
-    margin-bottom: rem(100);
+    @include adaptiveValue("margin-bottom", 100, 40);
     // .callback__container
     &__container {
-        padding-top: rem(92);
-        padding-bottom: rem(62);
+        @include adaptiveValue("padding-top", 92, 28);
+        @include adaptiveValue("padding-bottom", 62, 33);
         background: url("@img/callbackbg.jpg") center no-repeat;
         background-size: cover;
-        border-radius: 30px;
+        @include adaptiveValue("border-radius", 30, 15);
     }
     // .callback__title
     &__title {
-        margin-bottom: rem(40);
+        @include adaptiveValue("margin-bottom", 40, 16);
         text-align: center;
         color: #fff;
     }
@@ -28,18 +28,30 @@
                 max-width: rem(498);
 
                 .input {
-                    flex: 0 0 rem(244);
+                    flex: 0 0 rem(52);
                     border-radius: rem(60);
                     font-size: rem(14);
                     padding-left: rem(52);
                     border: 0;
+
+                    @media (min-width: $mobile) {
+                        flex: 0 0 rem(244);
+                    }
                 }
                 .button {
-                    flex: 0 0 rem(244);
+                    flex: 0 0 rem(52);
                     background-color: $golden;
                     box-shadow: 0px 4px 25px rgba(173, 125, 89, 0.15);
                     border-radius: 60px;
                     color: $dark;
+
+                    @media (min-width: $mobile) {
+                        flex: 0 0 rem(244);
+                    }
+                }
+
+                @media (max-width: $mobile) {
+                    flex-direction: column;
                 }
             }
             // .form__privacy
@@ -47,6 +59,12 @@
                 line-height: math.div(32, 20);
                 color: #fff;
                 letter-spacing: 0.02em;
+                @include adaptiveValue("font-size", 20, 10);
+                text-align: center;
+
+                @media (max-width: $mobile) {
+                    line-height: 1;
+                }
             }
         }
     }

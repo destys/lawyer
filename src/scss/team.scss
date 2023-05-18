@@ -2,9 +2,13 @@
     // ._block
     &._block {
         border-radius: 80px 80px 0 0;
-        padding: rem(75) 0 rem(110);
+        padding: rem(18) 0 rem(45);
 
         position: relative;
+
+        @include adaptiveValue("border-radius", 80, 40);
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
 
         &::before {
             content: "";
@@ -19,41 +23,48 @@
             z-index: 1;
         }
 
-        &::after {
-            content: "";
-            width: rem(321);
-            height: rem(305);
-            background: url("@img/elements/practice-at.png") center no-repeat;
-            background-size: contain;
+        @media (min-width: $tablet) {
+            padding: rem(75) 0 rem(110);
+            &::after {
+                content: "";
+                width: rem(321);
+                height: rem(305);
+                background: url("@img/elements/practice-at.png") center no-repeat;
+                background-size: contain;
 
-            position: absolute;
-            left: rem(-150);
-            top: 55%;
-            z-index: 1;
+                position: absolute;
+                left: rem(-150);
+                top: 55%;
+                z-index: 1;
+            }
         }
     }
     // .team__container
     &__container {
         position: relative;
 
-        &::after {
-            content: "";
-            background: url("@img/elements/elem-team.png") 0 0 no-repeat;
-            width: rem(204);
-            height: rem(174);
-            position: absolute;
-            top: rem(-50);
-            right: 0;
-            z-index: 1;
+        @media (min-width: $tablet) {
+            .home & {
+                &::after {
+                    content: "";
+                    background: url("@img/elements/elem-team.png") 0 0 no-repeat;
+                    width: rem(204);
+                    height: rem(174);
+                    position: absolute;
+                    top: rem(-50);
+                    right: 0;
+                    z-index: 1;
 
-            @media (min-width: $pc) {
-                right: rem(-100);
+                    @media (min-width: $pc) {
+                        right: rem(-100);
+                    }
+                }
             }
         }
     }
     // .team__section-title
     &__section-title {
-        margin-bottom: rem(74);
+        @include adaptiveValue("margin-bottom", 74, 16);
         text-align: center;
         text-transform: uppercase;
         color: #fff;
@@ -61,8 +72,9 @@
     // .team__list
     &__list {
     }
-    // .team__slider
-    &__slider {
+    // .team__wrapper
+    &__wrapper {
+        @include gridCards("fit", rem(300), 1fr, rem(30));
     }
     // .team__slide
     &__slide {
@@ -80,8 +92,13 @@
     }
     // .slide-team__content
     &__content {
-        padding: rem(30) rem(47) rem(24) rem(40);
+        padding: rem(20) rem(20) rem(28);
         background-color: #fff;
+        height: 100%;
+
+        @media (min-width: $pc) {
+            padding: rem(30) rem(47) rem(24) rem(40);
+        }
     }
     // .slide-team__info
     &__info {
@@ -95,6 +112,10 @@
         justify-content: space-between;
         align-items: flex-start;
         gap: rem(20);
+
+        @media (max-width: $mobile) {
+            align-items: center;
+        }
     }
 }
 .info-slide-team {
@@ -102,7 +123,7 @@
     &__position {
         font-family: $fontAdd;
         font-weight: 500;
-        font-size: rem(18);
+        @include adaptiveValue("font-size", 18, 10);
         line-height: math.div(30, 18);
         letter-spacing: 0.02em;
         text-transform: uppercase;
@@ -113,14 +134,17 @@
     &__name {
         margin-bottom: rem(10);
         color: $dark2;
+        @include adaptiveValue("font-size", 20, 16);
     }
 }
 .contacts-slide-team {
     // .contacts-slide-team__left
     &__left {
+        flex: 1 1 auto;
         a {
             margin-bottom: rem(10);
             color: $dark2;
+            @include adaptiveValue("font-size", 20, 12);
             &::before {
                 color: $golden;
                 font-size: rem(15);
@@ -130,6 +154,8 @@
     // .contacts-slide-team__social
     &__social {
         display: flex;
+
+        flex: 0 0 rem(70);
 
         a {
             font-size: 0;
@@ -145,6 +171,12 @@
                     color: #0077ff;
                 }
             }
+
+            @media (max-width: $tablet) {
+                &::before {
+                    font-size: rem(20);
+                }
+            }
         }
     }
 }
@@ -152,18 +184,20 @@
 .team {
     // .team__title
     &__title {
-        margin-bottom: rem(60);
+        @include adaptiveValue("margin-bottom", 60, 23);
     }
     // .team__container
     &__container {
     }
     // .team__item
     &__item {
-        margin-bottom: rem(100);
+        @include adaptiveValue("margin-bottom", 100, 40);
+
         &:nth-of-type(2n + 2) {
-            padding: rem(150) 0;
+            padding: rem(30) 0;
             background-color: #080d1b;
             position: relative;
+            @include adaptiveValue("border-radius", 80, 30);
 
             &::before {
                 content: "";
@@ -179,7 +213,9 @@
             }
 
             .item-team__container {
-                flex-direction: row-reverse;
+                @media (min-width: $tablet) {
+                    flex-direction: row-reverse;
+                }
             }
 
             .item-team__name,
@@ -192,6 +228,14 @@
                 background-color: #fff;
                 color: $dark;
             }
+
+            .footer-item-team {
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+
+            @media (min-width: $tablet) {
+                padding: rem(150) 0;
+            }
         }
     }
 }
@@ -199,29 +243,37 @@
     // .item-team__container
     &__container {
         display: flex;
+        flex-direction: column-reverse;
+
         @include adaptiveValue("gap", 210, 30, 1920, 1366, 1);
+
+        @media (min-width: $tablet) {
+            flex-direction: row;
+        }
     }
     // .item-team__left
     &__left {
+        flex: 1 1 50%;
     }
     // .item-team__name
     &__name {
         margin-bottom: rem(10);
         line-height: math.div(51, 34);
-        font-size: rem(34);
+        @include adaptiveValue("font-size", 34, 16);
         text-transform: uppercase;
+        color: $dark;
     }
     // .item-team__position
     &__position {
-        margin-bottom: rem(32);
+        @include adaptiveValue("margin-bottom", 32, 10);
         line-height: 1;
         color: $golden;
-        font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 12);
         text-transform: uppercase;
     }
     // .item-team__description
     &__description {
-        margin-bottom: rem(53);
+        @include adaptiveValue("margin-bottom", 53, 16);
         color: #000;
 
         p {
@@ -232,13 +284,15 @@
     }
     // .item-team__footer
     &__footer {
-        padding-top: rem(15);
+        padding-top: rem(16);
         border-top: 1px solid rgba(13, 21, 42, 0.3);
     }
     // .item-team__right
     &__right {
-        flex: 0 0 rem(649);
+        max-width: rem(469);
         img {
+            width: 100%;
+            max-height: rem(484);
             border-radius: 30px;
         }
     }
@@ -248,9 +302,13 @@
     &__contacts {
         display: flex;
         justify-content: space-between;
-        gap: rem(75);
+        @include adaptiveValue("gap", 75, 10, 1600, 991, 1);
 
         margin-bottom: rem(30);
+
+        @media (max-width: $tablet) {
+            flex-wrap: wrap;
+        }
     }
     // .footer-item-team__item
     &__item {
@@ -260,6 +318,13 @@
         &::before {
             font-size: rem(15);
             color: $golden;
+        }
+
+        @media (max-width: $mobile) {
+            &:last-of-type {
+                flex: 0 0 100%;
+                order: 1;
+            }
         }
     }
     // .footer-item-team__social

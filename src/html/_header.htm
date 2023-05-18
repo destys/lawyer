@@ -2,8 +2,7 @@
 	<div class="header__container">
 		<a href="/home.html" class="header__logo"><img data-src="../img/logo.svg" alt=""></a>
 		<div class="header__menu menu">
-			<button type="button" class="menu__icon icon-menu"><span></span></button>
-			<nav class="menu__body">
+			<nav class="menu__body" data-da=".burger, 991, 0">
 				<ul class="menu__list">
 					<li class="menu__item"><a href="bureau.html" class="menu__link">О бюро</a></li>
 					<li class="menu__item"><a href="practics.html" class="menu__link">Практики</a></li>
@@ -12,9 +11,16 @@
 				</ul>
 			</nav>
 		</div>
-		<a href="#" class="header__whatsapp _icon-wa">whatsapp</a>
-		<a href="tel:+79031606767" class="header__phone _icon-phone">+7(903)160-67-67</a>
-		<button type="button" class="header__callback button button_white" data-popup="#callback">Оставить
+		<a href="#" class="header__whatsapp _icon-wa" data-da=".burger__social, 767">whatsapp</a>
+		<a href="tel:+79031606767" class="header__phone _icon-phone" data-da=".burger__social, 767">+7(903)160-67-67</a>
+		<button type="button" class="header__callback button button_white" data-popup="#callback"
+			data-da=".burger__social, 767">Оставить
 			заявку</button>
+		<button type="button" class="menu__icon icon-menu"><span></span></button>
+	</div>
+	<div class="header__burger burger">
+		<div class="burger__social">
+
+		</div>
 	</div>
 </header>

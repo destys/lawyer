@@ -3,16 +3,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: rem(30);
     @include adaptiveValue("padding-left", 160, 15, 1920, 1600, 1);
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+    }
     // .contacts__info
     &__info {
     }
     // .contacts__title
     &__title {
-        margin-bottom: rem(60);
+        @include adaptiveValue("margin-bottom", 60, 22);
     }
     // .contacts__list
     &__list {
-        margin-bottom: rem(60);
+        @include adaptiveValue("margin-bottom", 60, 22);
     }
     // .contacts__item
     &__item {
@@ -21,7 +25,7 @@
             color: $golden;
         }
         &:not(:last-child) {
-            margin-bottom: rem(22);
+            @include adaptiveValue("margin-bottom", 22, 4);
         }
     }
     // .contacts__callback
@@ -30,9 +34,13 @@
         justify-content: center;
 
         margin-bottom: rem(46);
-        padding: rem(60);
+        @include adaptiveValue("margin-bottom", 46, 21);
+        padding: rem(30) rem(20);
         background: #f1f9ff;
         border-radius: 30px;
+        @media (min-width: $tablet) {
+            padding: rem(60);
+        }
 
         .form {
             display: flex;
@@ -44,13 +52,14 @@
                 margin-bottom: rem(10);
                 font-weight: 400;
                 line-height: math.div(51, 34);
-                font-size: rem(34);
+                @include adaptiveValue("font-size", 34, 16);
                 text-transform: uppercase;
                 text-align: center;
             }
             // .form__row
             &__row {
-                margin: 0 auto rem(30);
+                margin: 0 auto;
+                @include adaptiveValue("margin-bottom", 30, 17);
                 width: 100%;
                 max-width: rem(400);
                 &:not(:last-child) {
@@ -58,18 +67,23 @@
                 }
 
                 .input {
-                    padding: rem(16);
-                    height: rem(54);
+                    padding: rem(12) rem(10);
+                    height: rem(42);
                     background: #ffffff;
                     border-radius: 5px;
                     border: 0;
+                    @include adaptiveValue("font-size", 14, 12);
 
-                    font-size: rem(14);
+                    @media (min-width: $tablet) {
+                        padding: rem(16);
+                        height: rem(54);
+                    }
                 }
             }
         }
         .button {
-            margin: 0 auto rem(30);
+            margin: 0 auto;
+            @include adaptiveValue("margin-bottom", 30, 6);
             max-width: rem(400);
         }
         .checkbox {
@@ -89,9 +103,14 @@
     // .contacts__map
     &__map {
         flex: 1 1 50%;
+
+        @media (max-width: $tablet) {
+            margin-left: rem(-15);
+        }
         iframe {
             width: 100%;
             height: 100%;
+            min-height: rem(340);
         }
     }
 }
