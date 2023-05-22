@@ -100,7 +100,7 @@ body {
 		&::after {
 			content: "";
 			background: url("@img/elements/bureau-page-branch.png") center right no-repeat;
-			background-size: contain;
+			background-size: contain !important;
 			@include adaptiveValue("width", 204, 80);
 			@include adaptiveValue("height", 175, 100);
 

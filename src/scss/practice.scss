@@ -201,6 +201,10 @@
         @media (min-width: $tablet) {
             flex-direction: row;
             @include adaptiveValue("gap", 169, 30, 1920, 991, 1);
+
+            ._dark & {
+                flex-direction: row;
+            }
         }
     }
     &__left,
