@@ -65,16 +65,8 @@ body {
 	.loaded & {
 	}
 
-	&.home {
-		padding-top: rem(82);
-	}
-
 	@media (min-width: $mobileSmall) {
 		padding-top: rem(110);
-
-		&.home {
-			padding-top: rem(110);
-		}
 	}
 
 	@media (min-width: $tablet) {

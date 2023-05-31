@@ -78,7 +78,7 @@
         border-radius: rem(30);
         overflow: hidden;
 
-        &:first-child {
+        &:hover {
             .item-practice__title {
                 background-color: $golden;
             }
@@ -91,6 +91,7 @@
         img {
             width: 100%;
             @include adaptiveValue("height", 231, 126, 767, 320, 1);
+            object-fit: cover;
         }
     }
     // .item-practice__title
@@ -101,6 +102,8 @@
         padding: rem(25) rem(22);
         min-height: rem(118);
         background-color: #fff;
+
+        transition: background 0.2s ease;
 
         span {
             max-width: rem(580);
@@ -194,16 +197,12 @@
         flex-direction: column;
         gap: rem(16);
 
-        ._dark & {
-            flex-direction: column-reverse;
-        }
-
         @media (min-width: $tablet) {
             flex-direction: row;
             @include adaptiveValue("gap", 169, 30, 1920, 991, 1);
 
             ._dark & {
-                flex-direction: row;
+                flex-direction: row-reverse;
             }
         }
     }
@@ -254,17 +253,11 @@
     &__left {
         @media (min-width: $tablet) {
             flex: 1 1 auto;
-            ._dark & {
-                flex: 0 0 rem(649);
-            }
         }
     }
     // .block-practice__right
     &__right {
         @media (min-width: $tablet) {
-            ._dark & {
-                flex: 1 1 auto;
-            }
             flex: 0 0 rem(649);
         }
     }

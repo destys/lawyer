@@ -6,6 +6,7 @@
 
     @media (max-width: $tablet) {
         grid-template-columns: 1fr;
+        padding: 0 rem(15);
     }
     // .contacts__info
     &__info {

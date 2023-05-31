@@ -51,8 +51,9 @@ body::after {
 
 	&__content {
 		display: flex;
+		flex-direction: column-reverse;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: flex-end;
 		gap: rem(10);
 
 		visibility: hidden;
@@ -63,13 +64,20 @@ body::after {
 		.lock & {
 			visibility: visible;
 		}
+
+		@media (min-width: $mobileSmall) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
 	}
 
 	&__close {
-		width: rem(56);
-		height: rem(56);
+		flex: 0 0 rem(36);
+		width: rem(36);
+		height: rem(36);
 		background-color: #080d1b;
 		border-radius: 10px;
+
 		span {
 			display: block;
 			position: relative;
@@ -78,7 +86,7 @@ body::after {
 			&::before,
 			&::after {
 				content: "";
-				width: rem(40);
+				width: rem(25);
 				height: 2px;
 				background-color: #d9d9d9;
 				position: absolute;
@@ -91,13 +99,30 @@ body::after {
 				transform: translate(-50%, -50%) rotate(-90deg);
 			}
 		}
+
+		@media (min-width: $mobileSmall) {
+			flex: 0 0 rem(56);
+			width: rem(56);
+			height: rem(56);
+
+			span {
+				&::before,
+				&::after {
+					width: rem(40);
+				}
+			}
+		}
 	}
 	&__text {
-		padding: rem(50);
+		@include adaptiveValue("padding", 50, 15);
 		width: 100%;
 		max-width: 462px;
 		background-color: #f1f9ff;
 		border-radius: 30px;
+
+		@media (max-width: $mobileSmall) {
+			max-width: 100%;
+		}
 	}
 
 	// .popup__form
@@ -107,7 +132,7 @@ body::after {
 			&__title {
 				margin-bottom: rem(9);
 				line-height: math.div(51, 34);
-				font-size: rem(34);
+				@include adaptiveValue("font-size", 34, 21);
 				color: $dark2;
 				text-transform: uppercase;
 			}
@@ -147,6 +172,19 @@ body::after {
 				font-size: rem(12);
 				color: #666;
 			}
+		}
+	}
+}
+
+#thx {
+	.popup__text {
+		color: $dark;
+		text-align: center;
+		
+		h3 {
+			margin-bottom: rem(24);
+			@include adaptiveValue("font-size", 34, 21);
+			text-transform: uppercase;
 		}
 	}
 }
