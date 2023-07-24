@@ -75,6 +75,9 @@
     }
     // .practice__item
     &__item {
+        display: flex;
+        flex-direction: column;
+
         border-radius: rem(30);
         overflow: hidden;
 
@@ -100,7 +103,7 @@
         justify-content: center;
         align-items: center;
         padding: rem(25) rem(22);
-        min-height: rem(118);
+        height: 100%;
         background-color: #fff;
 
         transition: background 0.2s ease;
@@ -121,6 +124,13 @@
         color: $dark2;
         position: relative;
         overflow: hidden;
+
+        @include adaptiveValue("padding-top", 150, 30);
+        @include adaptiveValue("padding-bottom", 150, 30);
+
+        &:first-of-type {
+            padding-top: 0 !important;
+        }
 
         &:nth-of-type(2) {
             position: relative;
@@ -169,7 +179,6 @@
 
         // ._dark
         &._dark {
-            padding: rem(30) 0;
             @include adaptiveValue("border-radius", 80, 30);
             background-color: #080d1b;
             color: #fff;
@@ -179,14 +188,6 @@
                 border-bottom-right-radius: 0 !important;
                 border-bottom-left-radius: 0 !important;
             }
-
-            @media (min-width: $tablet) {
-                padding: rem(150) 0;
-            }
-        }
-
-        &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 100, 40);
         }
     }
 }

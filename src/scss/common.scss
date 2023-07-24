@@ -1,9 +1,5 @@
 // Заголовки, общие БЭМ блоки и проче...
 
-html {
-    overflow-x: hidden;
-}
-
 body {
     @extend %hidescroll;
     position: relative;

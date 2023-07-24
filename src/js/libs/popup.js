@@ -30,12 +30,12 @@ class Popup {
 				popupActive: 'popup_show', // Добавляется для попапа, когда он открывается
 				bodyActive: 'popup-show', // Добавляется для боди, когда попап открыт
 			},
-			focusCatch: true, // Фокус внутри попапа зациклен
+			focusCatch: false, // Фокус внутри попапа зациклен
 			closeEsc: true, // Закрытие по ESC
-			bodyLock: true, // Блокировка скролла
+			bodyLock: false, // Блокировка скролла
 			hashSettings: {
-				location: true, // Хэш в адресной строке
-				goHash: true, // Переход по наличию в адресной строке
+				location: false, // Хэш в адресной строке
+				goHash: false, // Переход по наличию в адресной строке
 			},
 			on: { // События
 				beforeOpen: function () { },
@@ -300,9 +300,9 @@ class Popup {
 			}
 		}));
 
-		setTimeout(() => {
+		/* setTimeout(() => {
 			this._focusTrap();
-		}, 50);
+		}, 50); */
 
 		this.popupLogging(`Закрыл попап`);
 	}

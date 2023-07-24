@@ -151,7 +151,7 @@ export let bodyUnlock = (delay = 500) => {
 			document.documentElement.classList.remove("lock");
 		}, delay);
 		bodyLockStatus = false;
-		setTimeout(function () {
+		setTimeout(function () { 
 			bodyLockStatus = true;
 		}, delay);
 	}

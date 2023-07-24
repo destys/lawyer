@@ -75,6 +75,8 @@
     // .team__wrapper
     &__wrapper {
         @include gridCards("fit", rem(300), 1fr, rem(30));
+        position: relative;
+        z-index: 100;
     }
     // .team__slide
     &__slide {
@@ -126,7 +128,6 @@
         @include adaptiveValue("font-size", 18, 10);
         line-height: math.div(30, 18);
         letter-spacing: 0.02em;
-        text-transform: uppercase;
 
         color: $golden;
     }
@@ -134,7 +135,9 @@
     &__name {
         margin-bottom: rem(10);
         color: $dark2;
+        font-weight: 500;
         @include adaptiveValue("font-size", 20, 16);
+        /* text-transform: uppercase; */
     }
 }
 .contacts-slide-team {
@@ -191,10 +194,14 @@
     }
     // .team__item
     &__item {
-        @include adaptiveValue("margin-bottom", 100, 40);
+        @include adaptiveValue("padding-top", 150, 30);
+        @include adaptiveValue("padding-bottom", 150, 30);
+
+        &:first-of-type {
+            padding-top: 0 !important;
+        }
 
         &:nth-of-type(2n + 2) {
-            padding: rem(30) 0;
             background-color: #080d1b;
             position: relative;
             @include adaptiveValue("border-radius", 80, 30);
@@ -232,10 +239,6 @@
             .footer-item-team {
                 border-color: rgba(255, 255, 255, 0.3);
             }
-
-            @media (min-width: $tablet) {
-                padding: rem(150) 0;
-            }
         }
     }
 }
@@ -246,6 +249,8 @@
         flex-direction: column-reverse;
 
         @include adaptiveValue("gap", 210, 30, 1920, 1366, 1);
+        position: relative;
+        z-index: 100;
 
         @media (min-width: $tablet) {
             flex-direction: row;

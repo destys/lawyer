@@ -58,7 +58,7 @@ body {
 	padding-top: rem(82);
 	// Скролл заблокирован
 	.lock & {
-		overflow: hidden;
+		overflow-y: hidden;
 		touch-action: none;
 	}
 	// Сайт загружен
@@ -89,21 +89,24 @@ body {
 		flex: 1 1 auto;
 		position: relative;
 
-		&::after {
-			content: "";
-			background: url("@img/elements/bureau-page-branch.png") center right no-repeat;
-			background-size: contain !important;
-			@include adaptiveValue("width", 204, 80);
-			@include adaptiveValue("height", 175, 100);
-
-			position: absolute;
-			@include adaptiveValue("top", 115, 30);
-			right: rem(0);
-		}
-
-		.home & {
+		@media (min-width: $tablet) {
 			&::after {
-				content: none;
+				content: "";
+				background: url("@img/elements/bureau-page-branch.png") center right no-repeat;
+				background-size: contain !important;
+				@include adaptiveValue("width", 204, 80);
+				@include adaptiveValue("height", 175, 100);
+
+				position: absolute;
+				@include adaptiveValue("top", 115, 30);
+				right: rem(0);
+			}
+
+			.home &,
+			.page-template-contacts-page & {
+				&::after {
+					content: none;
+				}
 			}
 		}
 	}

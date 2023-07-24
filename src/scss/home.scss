@@ -50,7 +50,12 @@
     // .content-intro__text
     &__text {
         @include adaptiveValue("margin-bottom", 42, 20);
+
+        line-height: math.div(32, 28);
+        @include adaptiveValue("font-size", 28, 14);
         letter-spacing: 0.02em;
+        font-style: italic;
+        color: $blue;
     }
 }
 .blocks-intro {
